@@ -1,0 +1,22 @@
+.ai-title{
+  background-color: #ff8138;
+  color: white;
+  font-size: 28px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.description{
+  background-color: #ff8138;
+  color: white;
+  height: 100px;
+  text-align: center;
+}
+
+.output-layout {
+  background-color: #ff8138;
+  color: white;
+  height: 30px;
+  text-align: center;
+}
+

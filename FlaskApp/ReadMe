@@ -1,0 +1,20 @@
+To run the app:
+With Anaconda:
+1. Open Anaconda Prompt
+2. Activate environment with the following packages installed:
+    a. keras 2.2.4
+    b. tensorflow 1.10.0
+    c. python 3.6
+    d. pandas
+    e. numpy
+    f. flask
+    g. scikit-learn
+3. Navigate to the location of the flaskapp folder
+4. In the command window enter:
+    a. set FLASK_APP=main
+    b. flask run
+
+File descriptions:
+a. main.py = the driving script for all the actions and routes between html pages
+b. load.py = loads the models
+c. cocktail_functions.py = where the model runs predictions and generates cocktail recipes

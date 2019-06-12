@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AI Cocktail Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='local_css.css') }}">
+  <style>
+  body{
+    font-family: Helvetica, Arial, sans-serif; ;
+  }
+  h2{
+    font-family: Helvetica, Arial, sans-serif; ;
+    <!--background-color: #fcd3b5;-->
+    <!--color: #ff5c16;-->
+  }
+
+  .animal-card {
+    border: 10px double #ff8138;
+    padding: 10px;
+    width: 600px;
+    margin: auto;
+    text-align: left;
+    background-color: white;
+    border-radius:15px;
+  }
+
+  .radio input[type="radio"] {
+      display: none;
+    }
+
+  .radio label {
+      display: inline-block;
+      background-color: #ddd;
+      padding: 4px 11px;
+      font-family: Arial;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+  .radio input[type="radio"]:checked+label {
+    background-color: #8ecc68;
+  }
+
+     .radio label {
+      display: inline-block;
+      background-color: #f4d2b9;
+      padding: 4px 11px;
+      font-family: Arial;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      width:95%;
+    }
+
+  .button{
+    position: center;
+    padding: 10px 0px 11px 0px !important;
+    font-size: 14px !important;
+    background-color: #6cad56;
+    font-weight: bold;
+    text-shadow: 1px 1px #F36C8C;
+    color: #ffffff;
+    border-radius: 10px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border: 1px solid #F36C8C;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  }
+   .btn-primary{
+  background-color: #6cad56;
+  }
+
+
+  </style>
+
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<a href="/">
+    <img src="https://www.avanade.com/en/solutions/cloud-and-application-services/~/media/logo/share-avanade-logo.jpg" alt="Avanade"  height="80" >
+</a>
+
+<body align="center">
+
+  <h2 align="center" style="font-weight: bold; font-size: 18px;">Here's your custom cocktail!</h2>
+  <h2 align="center"style="font-weight: bold; font-size: 18px;">You selected {{message0}}</h2>
+  <form id="live_form" name="fourq" action="/recipe_complete/" method="post" target="_self">
+
+    <div class="animal-card" align="left">
+        <h5 style="font-size: 15px;" align="center"> Pick your drink! </h5>
+        <ol class="radio">
+          <li>
+              <input type="radio" id="r1" name="recipe" value="a"/>
+              <label class="form-check-label" for="r1">{{message1}}</label>
+          </li><br>
+          <li>
+              <input type="radio" id="r2" name="recipe" value="b"/>
+              <label class="form-check-label" for="r2">{{message2}}</label>
+          </li><br>
+          <li>
+              <input type="radio" id="r3" name="recipe" value="c"/>
+              <label class="form-check-label" for="r3">{{message3}}</label>
+          </li><br>
+          <li>
+              <input type="radio" id="r4" name="recipe" value="d"/>
+              <label class="form-check-label" for="r4">{{message4}}</label>
+          </li><br>
+        </ol>
+        <br>
+    </div>
+
+  <br>
+
+      <div class="form-group" align="center">
+          <label class="question-label">
+           Hit submit once you've decided!
+          </label>
+          <br>
+      <button type="submit" value="Submit" class="btn btn-primary" name="submit">
+          Submit!
+      </button>
+      </div>
+      
+  </form>
+        {% if message %}
+          <p>{{message}}</p>
+        {% endif %}
+        
+  <br>
+
+  <!--Moved Home button function to Avanade Logo-->
+  <!--<div class="form-group" align="center" ><form id="home_form" name="gohome" action="/" method="post" target="_self">-->
+  <!--<button name="home" value="go-home">-->
+  <!--Home-->
+  <!--</button>-->
+  <!--</form>-->
+
+
+  <!--</div>-->
+
+</body>
+</html>

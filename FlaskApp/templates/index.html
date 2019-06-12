@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AI Cocktail Maker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='local_css.css') }}">
+  <style>
+  body{
+    font-family: Segoe UI ;
+  }
+
+  .animal-card {
+    border: 10px double #ff8138;
+    padding: 10px;
+    width: 600px;
+    margin: auto;
+    text-align: left;
+    background-color: white;
+  }
+  .button{
+    position: center;
+    padding: 10px 0px 11px 0px !important;
+    font-size: 14px !important;
+    background-color: #6cad56;
+    font-weight: bold;
+    text-shadow: 1px 1px #F36C8C;
+    color: #ffffff;
+    border-radius: 10px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border: 1px solid #F36C8C;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  }
+  .btn-primary{
+  background-color: #6cad56;
+  }
+  
+  .radio input[type="radio"]:checked+label {
+      font-weight: bold;
+      background-color: #ff5c16;
+    }   
+
+  </style>
+
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<a href="/">
+    <img src="https://www.avanade.com/en/solutions/cloud-and-application-services/~/media/logo/share-avanade-logo.jpg" alt="Avanade"  height="80" >
+</a>
+
+<body align="center">
+
+<div style="height: 130px; background-color: #ff8138;">
+  <h2 style="text-align:center; font-weight: bold; color: white; font-size: 28px; padding-top: 24px; text-align: center"> AI Cocktail Maker</h2>
+
+  <div class='description' style="background-color: #ff8138;">
+    <h5 style="text-align:center; font-size: 16px;"> Explore the secret sip of heaven made only for you by our unique AI generator </h5>
+      <h5 style="text-align:center; font-size: 16px;"> Select your preferences and let Artificial Intelligence do the work </h5>
+    </div>
+  </div>
+
+<br> <br/>
+  <h5 style="font-size: 17px; font-weight: bold;" align="center"> Please answer the following four questions: </h5>
+
+<form name="fourq" action="/generate_recipe/" method="post" target="_self">
+  <form id="live_form" name="fourq" action="/generate_recipe/" method="post" target="_self">
+
+<div class="row py-4" style="font-family: Segoe UI">
+    <div class="col-1">
+    </div>
+  <div class="col">
+          <h5 style="font-size: 15px;"> Pick your type of alcohol: </h5>
+          <div class="radio">
+          <input type="radio" id="r1" name="alcohol" value="a"> 
+              <label for="r1">Whiskey</label><br>
+          <input type="radio" id="r2" name="alcohol" value="b"> 
+              <label for="r2">Vodka</label><br>
+          <input type="radio" id="r3" name="alcohol" value="c">
+              <label for="r3">Tequila</label><br>
+          <input type="radio" id="r4" name="alcohol" value="d">
+              <label for="r4">Rum</label><br>
+          </div>
+  </div>
+  <div class="col">
+          <div class="radio">
+          <h5 style="font-size: 15px;"> What's your favorite season? </h5>
+          <input type="radio" id="r5" name="season" value="a">
+              <label for="r5">Fall</label> <br>
+          <input type="radio" id="r6" name="season" value="b">
+              <label for="r6">Winter</label> <br>
+          <input type="radio" id="r7" name="season" value="c"> 
+              <label for="r7">Spring</label><br>
+          <input type="radio" id="r8" name="season" value="d"> 
+              <label for="r8">Summer</label><br>
+          </div>
+  </div>
+
+  <div class="col">
+          <div class="radio">
+          <h5 style="font-size: 15px;"> Select our usual watering hole plays: </h5>
+          <input type="radio" id="r9" name="music" value="a"> 
+              <label for="r9">Some Sinatra</label><br>
+          <input type="radio" id="r10" name="music" value="b"> 
+              <label for="r10">Probably Rock</label><br>
+          <input type="radio" id="r11" name="music" value="c"> 
+              <label for="r11">Big Chart-Toppers</label><br>
+          <input type="radio" id="r12" name="music" value="d"> 
+              <label for="r12">Hot Club Hits</label><br>
+          </div>
+  </div>
+  <div class="col">
+          <div class="radio">
+          <h5 style="font-size: 15px;"> Pick your flavor profile: </h5>
+          <input type="radio" id="r13" name="flavor" value="a"> 
+              <label for="r13">Frozen</label><br>
+          <input type="radio" id="r14" name="flavor" value="b"> 
+              <label for="r14">Fruity</label><br>
+          <input type="radio" id="r15" name="flavor" value="c"> 
+              <label for="r15">Hot</label><br>
+          <input type="radio" id="r16" name="flavor" value="d"> 
+              <label for="r16">Sour</label><br>
+          <input type="radio" id="r17" name="flavor" value="e"> 
+              <label for="r17">Sweet</label><br>
+          <input type="radio" id="r18" name="flavor" value="f"> 
+              <label for="r18">Floral</label> <br>
+          </div>
+  </div>
+</div>
+
+
+  <div class="form-group" align="center">
+      <label class="question-label">
+       Let's make your drink!
+      </label>
+      <br>
+      <button type="submit" value="Submit" class="btn btn-primary" name="submit">
+          Enjoy & Relax
+      </button>
+  </div>
+
+
+
+  </form>
+
+
+</body>
+</html>
